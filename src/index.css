@@ -1,5 +1,2 @@
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
+@import url('./styles/normalize.css');
+@import url('./assets/fonts/fonts.css');

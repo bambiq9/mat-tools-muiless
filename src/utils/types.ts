@@ -45,17 +45,15 @@ export type TUnit = {
 
 export type TBlueprint = {
 	id: string
-	date?: Date
 }
 
 export type TAssemblyUnitPart = {
 	id: string
 	name: string
 	blueprint?: TBlueprint
-	date?: Date
 }
 
-export type TAssemblyUnitParts = {
+export type TAssemblyUnitPartsList = {
 	partId: string
 	quantity: number
 }
@@ -63,10 +61,9 @@ export type TAssemblyUnitParts = {
 export type TAssemblyUnit = {
 	id: string
 	name: string
-	parts: TAssemblyUnitParts[]
+	parts: TAssemblyUnitPartsList[]
 	blueprint: TBlueprint
 	description?: string
-	date?: Date
 }
 
 //
@@ -76,7 +73,7 @@ export type UserRole =
 	| 'guest'
 	| 'assembly'
 	| 'electric'
-	| 'refrigeration'
+	| 'refrig'
 
 export type TUser = {
 	id: string

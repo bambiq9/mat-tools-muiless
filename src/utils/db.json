@@ -1,0 +1,390 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Иван Петров",
+      "email": "ivan@example.com",
+      "role": ["admin"]
+    },
+    {
+      "id": "2",
+      "name": "Мария Сидорова",
+      "email": "maria@example.com",
+      "role": ["assembly"]
+    },
+    {
+      "id": "3",
+      "name": "Алексей Кузнецов",
+      "email": "alexey@example.com",
+      "role": ["electric"]
+    },
+    {
+      "id": "4",
+      "name": "Елена Волкова",
+      "email": "elena@example.com",
+      "role": ["refrig"]
+    },
+    {
+      "id": "5",
+      "name": "Гость",
+      "email": "guest@example.com",
+      "role": ["guest"]
+    },
+    {
+      "id": "6",
+      "name": "Сергей Новиков",
+      "email": "sergey@example.com",
+      "role": ["assembly", "electric"]
+    },
+    {
+      "id": "7",
+      "name": "Анна Морозова",
+      "email": "anna@example.com",
+      "role": ["admin", "refrig"]
+    }
+  ],
+  "insulationGroups": [
+    {
+      "id": "1",
+      "name": "электро отсек",
+      "date": "2023-05-15T09:30:00.000Z",
+      "items": [
+        {
+          "id": "1-1",
+          "thickness": 13,
+          "adhesive": true,
+          "name": "Основная изоляция корпуса",
+          "shape": {
+            "width": 1200,
+            "height": 800
+          }
+        },
+        {
+          "id": "1-2",
+          "thickness": 6,
+          "adhesive": false,
+          "name": "Дополнительная изоляция",
+          "shape": {
+            "segments": [
+              { "x": 0, "y": 0 },
+              { "x": 100, "y": 0 },
+              { "x": 100, "y": 50 },
+              { "x": 0, "y": 50 }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "перегородка",
+      "date": "2022-11-20T14:22:00.000Z",
+      "items": [
+        {
+          "id": "2-1",
+          "thickness": 6,
+          "adhesive": true,
+          "shape": {
+            "width": 600,
+            "height": 400
+          }
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "днище",
+      "date": "2024-01-10T11:15:00.000Z",
+      "items": [
+        {
+          "id": "3-1",
+          "thickness": 13,
+          "adhesive": true,
+          "name": "Центральная часть",
+          "shape": {
+            "width": 1500,
+            "height": 1000
+          }
+        },
+        {
+          "id": "3-2",
+          "thickness": 6,
+          "adhesive": false,
+          "name": "Угловые вставки",
+          "shape": {
+            "segments": [
+              { "x": 0, "y": 0 },
+              { "x": 200, "y": 0 },
+              { "x": 200, "y": 200 },
+              { "x": 0, "y": 200 }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "крышки днища",
+      "date": "2023-08-05T16:45:00.000Z",
+      "items": [
+        {
+          "id": "4-1",
+          "thickness": 6,
+          "adhesive": true,
+          "shape": {
+            "width": 300,
+            "height": 200
+          }
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "крышки торцевые",
+      "date": "2024-03-12T08:30:00.000Z",
+      "items": [
+        {
+          "id": "5-1",
+          "thickness": 13,
+          "adhesive": false,
+          "name": "Левая торцевая крышка",
+          "shape": {
+            "segments": [
+              { "x": 0, "y": 0 },
+              { "x": 150, "y": 0 },
+              { "x": 150, "y": 100 },
+              { "x": 0, "y": 100 }
+            ]
+          }
+        },
+        {
+          "id": "5-2",
+          "thickness": 13,
+          "adhesive": false,
+          "name": "Правая торцевая крышка",
+          "shape": {
+            "segments": [
+              { "x": 0, "y": 0 },
+              { "x": 150, "y": 0 },
+              { "x": 150, "y": 100 },
+              { "x": 0, "y": 100 }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "крышка конденсаторная",
+      "date": "2022-06-30T10:00:00.000Z",
+      "items": [
+        {
+          "id": "6-1",
+          "thickness": 6,
+          "adhesive": true,
+          "shape": {
+            "width": 400,
+            "height": 300
+          }
+        }
+      ]
+    }
+  ],
+  "assemblyUnitParts": [
+    {
+      "id": "part-001",
+      "name": "Корпус вентилятора",
+      "blueprint": {
+        "id": "bp-001"
+      }
+    },
+    {
+      "id": "part-002",
+      "name": "Крыльчатка",
+      "blueprint": {
+        "id": "bp-002"
+      }
+    },
+    {
+      "id": "part-003",
+      "name": "Двигатель",
+      "blueprint": {
+        "id": "bp-003"
+      }
+    },
+    {
+      "id": "part-004",
+      "name": "Корпус фильтра",
+      "blueprint": {
+        "id": "bp-004"
+      }
+    },
+    {
+      "id": "part-005",
+      "name": "Сменный элемент фильтра",
+      "blueprint": null
+    },
+    {
+      "id": "part-006",
+      "name": "Крышка люка",
+      "blueprint": {
+        "id": "bp-005"
+      }
+    },
+    {
+      "id": "part-007",
+      "name": "Уплотнитель",
+      "blueprint": {
+        "id": "bp-006"
+      }
+    },
+    {
+      "id": "part-008",
+      "name": "Крепеж",
+      "blueprint": null
+    }
+  ],
+  "assemblyUnits": [
+    {
+      "id": "asmb-001",
+      "name": "Вентилятор приточный",
+      "description": "Приточный вентилятор для системы вентиляции",
+      "blueprint": {
+        "id": "bp-007"
+      },
+      "parts": [
+        {
+          "partId": "part-001",
+          "quantity": 1
+        },
+        {
+          "partId": "part-002",
+          "quantity": 1
+        },
+        {
+          "partId": "part-003",
+          "quantity": 1
+        },
+        {
+          "partId": "part-008",
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": "asmb-002",
+      "name": "Фильтр",
+      "description": "Фильтрующий элемент системы очистки воздуха",
+      "blueprint": {
+        "id": "bp-008"
+      },
+      "parts": [
+        {
+          "partId": "part-004",
+          "quantity": 1
+        },
+        {
+          "partId": "part-005",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "asmb-003",
+      "name": "Крышка люка",
+      "description": "Крышка для доступа к внутренним компонентам",
+      "blueprint": {
+        "id": "bp-009"
+      },
+      "parts": [
+        {
+          "partId": "part-006",
+          "quantity": 1
+        },
+        {
+          "partId": "part-007",
+          "quantity": 1
+        },
+        {
+          "partId": "part-008",
+          "quantity": 6
+        }
+      ]
+    }
+  ],
+  "units": [
+    {
+      "id": "fridge-001",
+      "name": "Холодильная установка К-1",
+      "insulation": [
+        {
+          "id": "1",
+          "name": "электро отсек",
+          "date": "2023-05-15T09:30:00.000Z",
+          "items": [
+            {
+              "id": "1-1",
+              "thickness": 13,
+              "adhesive": true,
+              "name": "Основная изоляция корпуса",
+              "shape": {
+                "width": 1200,
+                "height": 800
+              }
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "name": "днище",
+          "date": "2024-01-10T11:15:00.000Z",
+          "items": [
+            {
+              "id": "3-1",
+              "thickness": 13,
+              "adhesive": true,
+              "name": "Центральная часть",
+              "shape": {
+                "width": 1500,
+                "height": 1000
+              }
+            }
+          ]
+        }
+      ],
+      "filter": null,
+      "date": "2024-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "ac-001",
+      "name": "Кондиционер Модель АС-200",
+      "insulation": null,
+      "filter": null,
+      "date": "2023-11-15T14:30:00.000Z"
+    },
+    {
+      "id": "fridge-002",
+      "name": "Холодильная установка К-2",
+      "insulation": [
+        {
+          "id": "2",
+          "name": "перегородка",
+          "date": "2022-11-20T14:22:00.000Z",
+          "items": [
+            {
+              "id": "2-1",
+              "thickness": 6,
+              "adhesive": true,
+              "shape": {
+                "width": 600,
+                "height": 400
+              }
+            }
+          ]
+        }
+      ],
+      "filter": null,
+      "date": "2024-02-10T09:15:00.000Z"
+    }
+  ]
+}
