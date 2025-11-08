@@ -1,20 +1,14 @@
-import { Routes, Route, useLocation } from "react-router-dom"
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 export const AppRoutes = () => {
-  const location = useLocation();
+	const location = useLocation();
 	const background = location.state?.background;
 
-  return (
-    <>
-      <Routes location={background || location}>
-				<Route
-					path='register'
-					element={null}
-				/>
-				<Route
-					path='login'
-					element={null}
-				/>
+	return (
+		<>
+			<Routes location={background || location}>
+				<Route path='register' element={null} />
+				<Route path='login' element={null} />
 				<Route path='insulation' element={null}>
 					<Route path='list' element={null}>
 						<Route path='compare' element={null} />
@@ -31,12 +25,9 @@ export const AppRoutes = () => {
 				<Routes>
 					<Route path='/insulation/list/:id' element={null} />
 					<Route path='/insulation/list/:id/edit' element={null} />
-					<Route
-						path='/scheme-list/part/:id'
-						element={null}
-					/>
+					<Route path='/scheme-list/part/:id' element={null} />
 				</Routes>
 			)}
-    </>
-  )
-}
+		</>
+	);
+};

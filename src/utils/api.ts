@@ -1,7 +1,6 @@
 import type {
 	TAssemblyUnit,
 	TAssemblyUnitPart,
-	TAssemblyUnitPartsList,
 	TInsulationGroup,
 	TUser,
 } from './types';
@@ -57,7 +56,7 @@ export const getAssemblyUnitPartsListApi = async (): Promise<
 // Assembly part single
 export const getAssemblyUnitPartApi = async (
 	partId: string
-): Promise<TAssemblyUnitPartsList> => fetchData(`assemblyUnitParts/${partId}`);
+): Promise<TAssemblyUnitPart> => fetchData(`assemblyUnitParts/${partId}`);
 
 export const addAssemblyUnitPartApi = async (
 	data: TAssemblyUnitPart
