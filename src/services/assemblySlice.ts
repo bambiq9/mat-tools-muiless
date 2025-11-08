@@ -78,12 +78,12 @@ const assemblySlice = createSlice({
 		})
 		builder
 			.addCase(getAssemblyUnitsList.fulfilled, (state, action) => {
-				// state.assemblyUnitsList = action.payload
+				state.assemblyUnitsList = action.payload;
 				state.isLoading = false
 			})
 			.addCase(getAssemblyUnitPartsList.fulfilled, (state, action) => {
 				state.isLoading = false
-				// state.assemblyUnitPartsList = action.payload
+				state.assemblyUnitPartsList = action.payload;
 			})
 			.addCase(getAssemblyUnitPart.fulfilled, (state, action) => {
 				state.isLoading = false
