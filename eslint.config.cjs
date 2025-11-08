@@ -76,5 +76,6 @@ module.exports = defineConfig([{
         "webpack/*.js",
         "package*.json",
         "**/*.d.ts",
+        "src/utils/db.json"
     ],
 }]);
