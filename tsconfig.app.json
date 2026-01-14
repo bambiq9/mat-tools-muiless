@@ -32,7 +32,8 @@
 			"@ui": ["src/components/ui"],
 			"@slices": ["src/services/slices"],
 			"@selectors": ["src/services/selectors"],
-			"@utils": ["src/utils"]
+			"@utils": ["src/utils"],
+			"@styles": ["src/styles"]
 		}
 	},
 	"include": ["src"]

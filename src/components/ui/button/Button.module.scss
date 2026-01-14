@@ -1,0 +1,13 @@
+.button {
+	background: none;
+	border: none;
+	appearance: none;
+}
+
+.button_primary {
+	background-color: aquamarine;
+
+	&:hover {
+		background-color: red;
+	}
+}

@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { InsulationList } from '@pages/insulation-list';
 
 export const AppRoutes = () => {
 	const location = useLocation();
@@ -10,7 +11,7 @@ export const AppRoutes = () => {
 				<Route path='register' element={null} />
 				<Route path='login' element={null} />
 				<Route path='insulation' element={null}>
-					<Route path='list' element={null}>
+					<Route path='list' element={<InsulationList />}>
 						<Route path='compare' element={null} />
 					</Route>
 					<Route path='calc' element={null} />

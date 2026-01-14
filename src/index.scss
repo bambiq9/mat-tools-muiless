@@ -1,0 +1,9 @@
+@use './styles/_variables.scss' as v;
+@import './styles/normalize.css';
+@import './assets/fonts/fonts.css';
+
+body {
+	color: v.$text;
+	font-family: 'Roboto', sans-serif;
+	background-color: v.$background;
+}
