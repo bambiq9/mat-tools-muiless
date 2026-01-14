@@ -1,7 +1,16 @@
 @use '../../../styles/variables' as v;
 
-.container {
+%base-container {
 	width: 100%;
 	margin: 0 auto;
 	padding: v.$padding;
+}
+
+.container {
+	@extend %base-container;
+
+	&_fixed {
+		@extend %base-container;
+		width: 600px;
+	}
 }

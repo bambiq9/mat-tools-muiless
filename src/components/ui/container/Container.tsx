@@ -7,10 +7,7 @@ export const Container: FC<TContainerProps> = ({
 	fixedWidth = false,
 }: TContainerProps) => {
 	return (
-		<div
-			className={styles.container}
-			style={{ maxWidth: fixedWidth ? '500px' : 'none' }}
-		>
+		<div className={fixedWidth ? styles.container : styles['container_fixed']}>
 			{children}
 		</div>
 	);
