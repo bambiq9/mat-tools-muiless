@@ -1,0 +1,27 @@
+@use '../../../styles/variables' as v;
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: v.$padding-m;
+	padding: v.$padding-s;
+	background: none;
+	border: none;
+	cursor: pointer;
+	appearance: none;
+}
+
+.button__icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button_primary {
+	background-color: aquamarine;
+
+	&:hover {
+		background-color: red;
+	}
+}

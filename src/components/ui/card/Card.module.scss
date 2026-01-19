@@ -1,0 +1,17 @@
+@use '../../../styles/variables' as v;
+
+.card {
+	padding: v.$padding-m;
+	border-radius: v.$border-radius-round;
+	box-shadow: 0 5px 20px rgb(0 0 0 / 30%);
+	transition:
+		box-shadow 0.2s ease-out,
+		transform 0.2s ease-out;
+}
+
+.card-hoverable {
+	&:hover {
+		box-shadow: 0 15px 20px rgb(0 0 0 / 10%);
+		transform: translateY(-10%);
+	}
+}
