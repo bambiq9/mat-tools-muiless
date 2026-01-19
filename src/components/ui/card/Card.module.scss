@@ -1,7 +1,7 @@
 @use '../../../styles/variables' as v;
 
 .card {
-	padding: calc(v.$padding * 2);
+	padding: v.$padding-m;
 	border-radius: v.$border-radius-round;
 	box-shadow: 0 5px 20px rgb(0 0 0 / 30%);
 	transition:

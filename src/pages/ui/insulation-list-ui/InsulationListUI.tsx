@@ -1,19 +1,13 @@
 import type { FC } from 'react';
-import { Card } from '@components/ui/card';
 import { Container } from '@components/ui/container';
+import { Loader } from '@components/ui/loader';
+import { Card } from '@components/ui/card';
 
 export const InsulationListUI: FC = () => {
 	return (
 		<Container fixedWidth>
-			<Card title='Card Title' hover={false}>
-				test
-			</Card>
-			<Card title='Card Title' hover={false}>
-				test
-			</Card>
-			<Card title='Card Title' hover={false}>
-				test
-			</Card>
+			<Loader />
+			<Card title={'test'} />
 		</Container>
 	);
 };

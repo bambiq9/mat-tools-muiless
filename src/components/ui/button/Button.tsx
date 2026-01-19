@@ -1,10 +1,11 @@
 import type { FC } from 'react';
 import type { TButtonProps } from './types';
 import styles from './Button.module.scss';
+import { Loader } from '../loader';
 
 export const Button: FC<TButtonProps> = ({
-	iconLeft,
-	iconRight,
+	IconLeft,
+	IconRight,
 	loading = false,
 	color = 'primary',
 	children,
@@ -12,16 +13,27 @@ export const Button: FC<TButtonProps> = ({
 }) => {
 	const colorClass = `button_${color}`;
 	const content = () => {
-		if (loading) return 'loading';
-
-		if (iconLeft || iconRight)
+		if (loading)
 			return (
 				<>
-					{iconLeft || null}
+					<div className={styles.button__icon}>{<Loader />}</div>
 					{children}
-					{iconRight || null}
 				</>
 			);
+
+		if (IconLeft || IconRight) {
+			return (
+				<>
+					{IconLeft && (
+						<div className={styles.button__icon}>{<IconLeft />}</div>
+					)}
+					{children}
+					{IconRight && (
+						<div className={styles.button__icon}>{<IconRight />}</div>
+					)}
+				</>
+			);
+		}
 
 		return children;
 	};

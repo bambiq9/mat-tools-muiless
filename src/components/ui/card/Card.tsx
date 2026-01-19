@@ -25,7 +25,7 @@ export const Card: FC<TCardProps> = ({
 				{children}
 			</Typography>
 			{actions && actions}
-			<Button>Test</Button>
+			<Button loading={true}>Test</Button>
 		</div>
 	);
 };
