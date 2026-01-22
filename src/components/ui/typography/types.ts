@@ -1,12 +1,11 @@
-import type { ReactNode } from 'react';
+import type { ElementType, ReactNode } from 'react';
 
-export type TTypographyTypes =
-	| 'h1'
-	| 'h2'
-	| 'h3'
-	| 'body'
-	| 'quote'
-	| 'caption';
+export type TTypographyTypes = 'h1' | 'h2' | 'h3' | 'text' | 'subtitle';
+
+export type TElementData = {
+	tag: ElementType;
+	class: string;
+};
 
 export type TTypographyProps = {
 	type?: TTypographyTypes;

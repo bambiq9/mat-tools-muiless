@@ -3,7 +3,12 @@
 @import './assets/fonts/fonts.css';
 
 body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
 	color: v.$text;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Segoe UI', "Tahoma", "Geneva", "Verdana", sans-serif;
+	background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
 	background-color: v.$background-light;
 }

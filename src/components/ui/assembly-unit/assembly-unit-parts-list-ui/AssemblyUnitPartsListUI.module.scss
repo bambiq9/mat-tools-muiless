@@ -1,0 +1,53 @@
+@use '../../../../styles/variables' as v;
+
+.parts-list__wrapper {
+	padding: v.$padding-sm v.$padding-md;
+}
+
+.parts-list__title {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 12px;
+	color: #2d3748;
+	font-weight: 600;
+}
+
+.parts-list__title-icon {
+	width: 18px;
+	height: 18px;
+	color: #4299e1;
+}
+
+.parts-list__list {
+	padding: 0;
+	list-style: none;
+}
+
+.part__wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px 0;
+	border-bottom: 1px solid #edf2f7;
+}
+
+.part__info {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	gap: 10px;
+}
+
+.part__icon {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	width: 16px;
+	height: 16px;
+	color: #718096;
+}
+
+.part__quantity {
+	font-weight: 500;
+}
