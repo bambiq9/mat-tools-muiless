@@ -1,9 +1,9 @@
 @use '../../../styles/variables' as v;
 
 %base-container {
+	display: flex;
 	width: 100%;
 	margin: 0 auto;
-	padding: v.$padding-l;
 }
 
 .container {

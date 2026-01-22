@@ -66,6 +66,12 @@ export type TAssemblyUnit = {
 	description?: string;
 };
 
+export type TAssemblyUnitCardPart = TAssemblyUnitPartsList & { name: string };
+
+export type TAssemblyUnitCard = Omit<TAssemblyUnit, 'parts'> & {
+	partsList: TAssemblyUnitCardPart[];
+};
+
 //
 
 export type UserRole = 'admin' | 'guest' | 'assembly' | 'electric' | 'refrig';

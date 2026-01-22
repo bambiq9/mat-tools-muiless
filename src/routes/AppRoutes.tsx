@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { InsulationList } from '@pages/insulation-list';
+import { AssemblyUnitsList } from '@pages/assembly-units-list';
 
 export const AppRoutes = () => {
 	const location = useLocation();
@@ -18,6 +19,7 @@ export const AppRoutes = () => {
 					<Route path='stats' element={null} />
 				</Route>
 				<Route path='scheme-list' element={null} />
+				<Route path='assembly-units-list' element={<AssemblyUnitsList />} />
 				<Route path='filter' element={null} />
 				<Route path='sets' element={null} />
 				<Route path='*' element={null} />

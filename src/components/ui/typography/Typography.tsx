@@ -1,27 +1,42 @@
-import type { ElementType, FC } from 'react';
-import type { TTypographyProps, TTypographyTypes } from './types';
+import type { FC } from 'react';
+import type { TElementData, TTypographyProps, TTypographyTypes } from './types';
 import styles from './Typography.module.scss';
 
-const typographyTypeElementMap: Record<TTypographyTypes, ElementType> = {
-	body: 'p',
-	caption: 'figcaption',
-	quote: 'blockquote',
-	h1: 'h1',
-	h2: 'h2',
-	h3: 'h3',
+const typographyTypeElementMap: Record<TTypographyTypes, TElementData> = {
+	text: {
+		tag: 'p',
+		class: 'text',
+	},
+	subtitle: {
+		tag: 'span',
+		class: 'subtitle',
+	},
+	h1: {
+		tag: 'h1',
+		class: 'h1',
+	},
+	h2: {
+		tag: 'h2',
+		class: 'h2',
+	},
+	h3: {
+		tag: 'h3',
+		class: 'h3',
+	},
 };
 
 export const Typography: FC<TTypographyProps> = ({
 	children,
-	type = 'body',
+	type = 'text',
 	align = 'left',
 }) => {
-	const TypographyComponent = typographyTypeElementMap[type];
+	const TypographyComponent = typographyTypeElementMap[type].tag;
+	const style = typographyTypeElementMap[type].class;
 
 	return (
 		<TypographyComponent
 			className={
-				align ? `${styles.typography} ${styles[align]}` : styles.typography
+				align ? `${styles[style]} ${styles[align]}` : styles.typography
 			}
 		>
 			{children}
