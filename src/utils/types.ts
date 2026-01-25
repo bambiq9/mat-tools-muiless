@@ -64,6 +64,7 @@ export type TAssemblyUnit = {
 	parts: TAssemblyUnitPartsList[];
 	blueprint: TBlueprint;
 	description?: string;
+	active?: boolean;
 };
 
 export type TAssemblyUnitCardPart = TAssemblyUnitPartsList & { name: string };

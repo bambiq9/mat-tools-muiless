@@ -19,7 +19,8 @@ export const AssemblyUnitsList: FC = () => {
 		dispatch(getAssemblyUnitPartsList());
 	}, [dispatch]);
 
-	const units: TAssemblyUnitCard[] = [];
+	const activeUnits: TAssemblyUnitCard[] = [];
+	const archiveUnits: TAssemblyUnitCard[] = [];
 
 	unitsList.forEach((unit) => {
 		const unitPartsList: TAssemblyUnitCardPart[] = unit.parts.map((part) => {
@@ -35,8 +36,15 @@ export const AssemblyUnitsList: FC = () => {
 		});
 
 		const currentUnit = { ...unit, partsList: unitPartsList };
-		units.push(currentUnit);
+
+		if (currentUnit.active) activeUnits.push(currentUnit);
+		else archiveUnits.push(currentUnit);
 	});
 
-	return <AssemblyUnitsListUI units={units} />;
+	return (
+		<AssemblyUnitsListUI
+			activeUnits={activeUnits}
+			archiveUnits={archiveUnits}
+		/>
+	);
 };
