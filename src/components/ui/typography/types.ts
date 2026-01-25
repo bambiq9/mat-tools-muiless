@@ -10,5 +10,6 @@ export type TElementData = {
 export type TTypographyProps = {
 	type?: TTypographyTypes;
 	align?: 'left' | 'center' | 'right';
+	className?: string;
 	children: ReactNode;
 };

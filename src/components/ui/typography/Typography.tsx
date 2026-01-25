@@ -29,6 +29,7 @@ export const Typography: FC<TTypographyProps> = ({
 	children,
 	type = 'text',
 	align = 'left',
+	className,
 }) => {
 	const TypographyComponent = typographyTypeElementMap[type].tag;
 	const style = typographyTypeElementMap[type].class;
@@ -36,7 +37,9 @@ export const Typography: FC<TTypographyProps> = ({
 	return (
 		<TypographyComponent
 			className={
-				align ? `${styles[style]} ${styles[align]}` : styles.typography
+				align
+					? `${styles[style]} ${styles[align]} ${className}`
+					: `${styles.typograph} ${className}`
 			}
 		>
 			{children}

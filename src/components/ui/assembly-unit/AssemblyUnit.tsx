@@ -8,7 +8,7 @@ import type { TAssemblyUnitProps } from './types';
 
 export const AssemblyUnit: FC<TAssemblyUnitProps> = ({ unit }) => {
 	return (
-		<Card>
+		<Card className={!unit.active ? `${styles.archive}` : ''}>
 			<div className={styles.header}>
 				<div className={styles.header__icon}>
 					<GearsIcon />

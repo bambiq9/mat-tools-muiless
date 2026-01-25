@@ -1,6 +1,31 @@
 @use '../../../styles/variables' as v;
 
 .container {
+	flex-direction: column;
+	gap: 40px;
+}
+
+.header {
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	gap: v.$padding-md;
+}
+
+.controls {
+	display: flex;
+	gap: v.$padding-sm;
+	height: fit-content;
+}
+
+.list-title {
+	margin-bottom: 20px;
+	padding-bottom: 8px;
+	border-bottom: 2px solid #e2e8f0;
+}
+
+.list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+	gap: v.$padding-sm;
 }
