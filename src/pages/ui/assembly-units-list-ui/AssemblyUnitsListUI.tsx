@@ -1,14 +1,16 @@
-import { AssemblyUnit } from '@components/ui/assembly-unit';
 import { Container } from '@components/ui/container';
 import type { FC } from 'react';
 import type { TAssemblyUnitsListUIProps } from './type';
 import styles from './AssemblyUnitsListUI.module.scss';
 import { Typography } from '@components/ui/typography';
 import { Button } from '@components/ui/button';
+import { AssemblyUnit } from '@components/assembly-unit';
 
 export const AssemblyUnitsListUI: FC<TAssemblyUnitsListUIProps> = ({
 	activeUnits,
 	archiveUnits,
+	selectedUnits,
+	handleCheckboxChange,
 }) => {
 	return (
 		<main>
@@ -31,7 +33,14 @@ export const AssemblyUnitsListUI: FC<TAssemblyUnitsListUIProps> = ({
 					</Typography>
 					<ul className={styles.list}>
 						{activeUnits.map((unit) => (
-							<AssemblyUnit key={unit.id} unit={unit} />
+							<AssemblyUnit
+								key={unit.id}
+								unit={unit}
+								isSelected={selectedUnits.has(unit.id)}
+								onCheckboxChange={(checked) =>
+									handleCheckboxChange(unit.id, checked)
+								}
+							/>
 						))}
 					</ul>
 				</div>
@@ -42,7 +51,14 @@ export const AssemblyUnitsListUI: FC<TAssemblyUnitsListUIProps> = ({
 					</Typography>
 					<ul className={styles.list}>
 						{archiveUnits.map((unit) => (
-							<AssemblyUnit key={unit.id} unit={unit} />
+							<AssemblyUnit
+								key={unit.id}
+								unit={unit}
+								isSelected={selectedUnits.has(unit.id)}
+								onCheckboxChange={(checked) =>
+									handleCheckboxChange(unit.id, checked)
+								}
+							/>
 						))}
 					</ul>
 				</div>

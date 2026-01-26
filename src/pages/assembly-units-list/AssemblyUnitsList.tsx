@@ -1,4 +1,4 @@
-import { useEffect, type FC } from 'react';
+import { useEffect, useState, type FC } from 'react';
 import { AssemblyUnitsListUI } from '@pages/ui/assembly-units-list-ui';
 import { useDispatch, useSelector } from '@services/store';
 import {
@@ -13,6 +13,20 @@ export const AssemblyUnitsList: FC = () => {
 	const dispatch = useDispatch();
 	const unitsList = useSelector(selectUnitsList);
 	const partsList = useSelector(selectUnitPartsList);
+
+	const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+
+	const handleCheckboxChange = (id: string, checked: boolean) => {
+		setSelectedIds((prev) => {
+			const next = new Set(prev);
+			if (checked) {
+				next.add(id);
+			} else {
+				next.delete(id);
+			}
+			return next;
+		});
+	};
 
 	useEffect(() => {
 		dispatch(getAssemblyUnitsList());
@@ -45,6 +59,8 @@ export const AssemblyUnitsList: FC = () => {
 		<AssemblyUnitsListUI
 			activeUnits={activeUnits}
 			archiveUnits={archiveUnits}
+			selectedUnits={selectedIds}
+			handleCheckboxChange={handleCheckboxChange}
 		/>
 	);
 };
