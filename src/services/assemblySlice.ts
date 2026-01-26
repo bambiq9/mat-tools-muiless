@@ -7,8 +7,11 @@ import {
 	getAssemblyUnitPartApi,
 	getAssemblyUnitPartsListApi,
 	getAssemblyUnitsListApi,
+	updateAssemblyUnitApi,
+	deleteAssemblyUnitApi,
 } from '@utils/api';
 import type { TAssemblyUnit, TAssemblyUnitPart } from '@utils/types';
+import type { RootState } from './store';
 
 export const getAssemblyUnitsList = createAsyncThunk(
 	'getAssmblyUnitsList',
@@ -23,6 +26,32 @@ export const getAssemblyUnitPartsList = createAsyncThunk(
 export const getAssemblyUnitPart = createAsyncThunk(
 	'getAssemblyUnitPart',
 	async (partId: string) => await getAssemblyUnitPartApi(partId)
+);
+
+export const toggleArchiveAssemblyUnits = createAsyncThunk(
+	'assembly/toggleArchiveUnits',
+	async (unitIds: string[], { dispatch, getState }) => {
+		const state = getState() as RootState;
+		const units = selectUnitsList(state);
+
+		await Promise.all(
+			unitIds.map((id) => {
+				const unit = units.find((u) => u.id === id);
+				const newActiveStatus = !unit?.active;
+				return updateAssemblyUnitApi(id, { active: newActiveStatus });
+			})
+		);
+
+		dispatch(getAssemblyUnitsList());
+	}
+);
+
+export const deleteAssemblyUnits = createAsyncThunk(
+	'assembly/deleteUnits',
+	async (unitIds: string[], { dispatch }) => {
+		await Promise.all(unitIds.map((id) => deleteAssemblyUnitApi(id)));
+		dispatch(getAssemblyUnitsList());
+	}
 );
 
 type TAssemblyState = {
@@ -66,6 +95,8 @@ const assemblySlice = createSlice({
 			getAssemblyUnitsList,
 			getAssemblyUnitPartsList,
 			getAssemblyUnitPart,
+			toggleArchiveAssemblyUnits,
+			deleteAssemblyUnits,
 		].forEach((thunk) => {
 			builder.addCase(thunk.pending, (state) => {
 				state.isLoading = true;
@@ -88,6 +119,12 @@ const assemblySlice = createSlice({
 			.addCase(getAssemblyUnitPart.fulfilled, (state, action) => {
 				state.isLoading = false;
 				state.assemblyUnitPart = action.payload;
+			})
+			.addCase(toggleArchiveAssemblyUnits.fulfilled, (state) => {
+				state.isLoading = false;
+			})
+			.addCase(deleteAssemblyUnits.fulfilled, (state) => {
+				state.isLoading = false;
 			});
 	},
 });

@@ -48,6 +48,15 @@ export const getUserApi = async (userId: string): Promise<TUser> =>
 export const getAssemblyUnitsListApi = async (): Promise<TAssemblyUnit[]> =>
 	fetchData('assemblyUnits');
 
+export const updateAssemblyUnitApi = async (
+	unitId: string,
+	data: Partial<TAssemblyUnit>
+): Promise<TAssemblyUnit> =>
+	fetchData(`assemblyUnits/${unitId}`, 'PATCH', data);
+
+export const deleteAssemblyUnitApi = async (unitId: string): Promise<void> =>
+	fetchData(`assemblyUnits/${unitId}`, 'DELETE');
+
 // Assembly parts list
 export const getAssemblyUnitPartsListApi = async (): Promise<
 	TAssemblyUnitPart[]
