@@ -11,6 +11,6 @@
 
 	&_fixed {
 		@extend %base-container;
-		width: 800px;
+		max-width: 800px;
 	}
 }

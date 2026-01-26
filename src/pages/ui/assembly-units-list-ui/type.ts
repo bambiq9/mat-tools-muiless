@@ -8,4 +8,6 @@ export type TAssemblyUnitsListUIProps = {
 	onArchive: () => void;
 	onDelete: () => void;
 	hasSelected: boolean;
+	filterValue: string;
+	onFilterChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };

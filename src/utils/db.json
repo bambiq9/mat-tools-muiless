@@ -316,7 +316,7 @@
       "blueprint": {
         "id": "bp-007"
       },
-      "active": false,
+      "active": true,
       "parts": [
         {
           "partId": "part-001",
@@ -362,7 +362,7 @@
       "blueprint": {
         "id": "bp-009"
       },
-      "active": false,
+      "active": true,
       "parts": [
         {
           "partId": "part-006",
@@ -385,7 +385,7 @@
       "blueprint": {
         "id": "bp-010"
       },
-      "active": true,
+      "active": false,
       "parts": [
         {
           "partId": "part-001",
@@ -412,7 +412,7 @@
       "blueprint": {
         "id": "bp-011"
       },
-      "active": true,
+      "active": false,
       "parts": [
         {
           "partId": "part-004",
@@ -494,7 +494,7 @@
       "blueprint": {
         "id": "bp-014"
       },
-      "active": true,
+      "active": false,
       "parts": [
         {
           "partId": "part-001",
