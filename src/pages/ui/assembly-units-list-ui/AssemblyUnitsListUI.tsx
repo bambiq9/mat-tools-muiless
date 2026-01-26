@@ -11,7 +11,26 @@ export const AssemblyUnitsListUI: FC<TAssemblyUnitsListUIProps> = ({
 	archiveUnits,
 	selectedUnits,
 	handleCheckboxChange,
+	onArchive,
+	onDelete,
+	hasSelected,
 }) => {
+	let archiveButtonLabel = 'В архив';
+	if (selectedUnits.size > 0) {
+		const hasActive = Array.from(selectedUnits).some((id) =>
+			activeUnits.some((u) => u.id === id)
+		);
+		const hasArchived = Array.from(selectedUnits).some((id) =>
+			archiveUnits.some((u) => u.id === id)
+		);
+
+		if (hasArchived && !hasActive) {
+			archiveButtonLabel = 'Восстановить';
+		} else if (hasActive && hasArchived) {
+			archiveButtonLabel = 'Изменить статус';
+		}
+	}
+
 	return (
 		<main>
 			<Container fixedWidth className={styles.container}>
@@ -19,10 +38,10 @@ export const AssemblyUnitsListUI: FC<TAssemblyUnitsListUIProps> = ({
 					<Typography type='h1'>Сборочные единицы</Typography>
 					<div className={styles.controls}>
 						<Button>Добавить</Button>
-						<Button disabled color='neutral'>
-							В архив
+						<Button onClick={onArchive} disabled={!hasSelected} color='neutral'>
+							{archiveButtonLabel}
 						</Button>
-						<Button disabled color='error'>
+						<Button onClick={onDelete} disabled={!hasSelected} color='error'>
 							Удалить
 						</Button>
 					</div>

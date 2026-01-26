@@ -43,7 +43,7 @@ export const AssemblyUnitUI: FC<TAssemblyUnitProps> = ({
 				</div>
 				<div className={styles.header__title}>
 					<Typography type='h3'>{unit.name}</Typography>
-					{unit.blueprint.id && (
+					{unit.blueprint?.id && (
 						<Typography type='subtitle'>{unit.blueprint.id}</Typography>
 					)}
 				</div>

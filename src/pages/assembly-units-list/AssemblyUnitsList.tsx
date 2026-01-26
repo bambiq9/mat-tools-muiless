@@ -2,10 +2,12 @@ import { useEffect, useState, type FC } from 'react';
 import { AssemblyUnitsListUI } from '@pages/ui/assembly-units-list-ui';
 import { useDispatch, useSelector } from '@services/store';
 import {
+	toggleArchiveAssemblyUnits,
 	getAssemblyUnitPartsList,
 	getAssemblyUnitsList,
 	selectUnitPartsList,
 	selectUnitsList,
+	deleteAssemblyUnits,
 } from '@services/assemblySlice';
 import type { TAssemblyUnitCard, TAssemblyUnitCardPart } from '@utils/types';
 
@@ -26,6 +28,24 @@ export const AssemblyUnitsList: FC = () => {
 			}
 			return next;
 		});
+	};
+
+	const handleToggleArchive = () => {
+		if (selectedIds.size === 0) return;
+		dispatch(toggleArchiveAssemblyUnits(Array.from(selectedIds)));
+		setSelectedIds(new Set());
+	};
+
+	const handleDelete = () => {
+		if (selectedIds.size === 0) return;
+		if (
+			!confirm(
+				'Удалить выбранные сборочные единицы? Это действие нельзя отменить.'
+			)
+		)
+			return;
+		dispatch(deleteAssemblyUnits(Array.from(selectedIds)));
+		setSelectedIds(new Set());
 	};
 
 	useEffect(() => {
@@ -60,7 +80,10 @@ export const AssemblyUnitsList: FC = () => {
 			activeUnits={activeUnits}
 			archiveUnits={archiveUnits}
 			selectedUnits={selectedIds}
+			onArchive={handleToggleArchive}
+			onDelete={handleDelete}
 			handleCheckboxChange={handleCheckboxChange}
+			hasSelected={selectedIds.size > 0}
 		/>
 	);
 };

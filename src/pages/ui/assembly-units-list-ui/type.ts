@@ -5,4 +5,7 @@ export type TAssemblyUnitsListUIProps = {
 	archiveUnits: TAssemblyUnitCard[];
 	selectedUnits: Set<string>;
 	handleCheckboxChange: (id: string, selected: boolean) => void;
+	onArchive: () => void;
+	onDelete: () => void;
+	hasSelected: boolean;
 };

@@ -4,43 +4,59 @@
       "id": "1",
       "name": "Иван Петров",
       "email": "ivan@example.com",
-      "role": ["admin"]
+      "role": [
+        "admin"
+      ]
     },
     {
       "id": "2",
       "name": "Мария Сидорова",
       "email": "maria@example.com",
-      "role": ["assembly"]
+      "role": [
+        "assembly"
+      ]
     },
     {
       "id": "3",
       "name": "Алексей Кузнецов",
       "email": "alexey@example.com",
-      "role": ["electric"]
+      "role": [
+        "electric"
+      ]
     },
     {
       "id": "4",
       "name": "Елена Волкова",
       "email": "elena@example.com",
-      "role": ["refrig"]
+      "role": [
+        "refrig"
+      ]
     },
     {
       "id": "5",
       "name": "Гость",
       "email": "guest@example.com",
-      "role": ["guest"]
+      "role": [
+        "guest"
+      ]
     },
     {
       "id": "6",
       "name": "Сергей Новиков",
       "email": "sergey@example.com",
-      "role": ["assembly", "electric"]
+      "role": [
+        "assembly",
+        "electric"
+      ]
     },
     {
       "id": "7",
       "name": "Анна Морозова",
       "email": "anna@example.com",
-      "role": ["admin", "refrig"]
+      "role": [
+        "admin",
+        "refrig"
+      ]
     }
   ],
   "insulationGroups": [
@@ -66,10 +82,22 @@
           "name": "Дополнительная изоляция",
           "shape": {
             "segments": [
-              { "x": 0, "y": 0 },
-              { "x": 100, "y": 0 },
-              { "x": 100, "y": 50 },
-              { "x": 0, "y": 50 }
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 100,
+                "y": 0
+              },
+              {
+                "x": 100,
+                "y": 50
+              },
+              {
+                "x": 0,
+                "y": 50
+              }
             ]
           }
         }
@@ -113,10 +141,22 @@
           "name": "Угловые вставки",
           "shape": {
             "segments": [
-              { "x": 0, "y": 0 },
-              { "x": 200, "y": 0 },
-              { "x": 200, "y": 200 },
-              { "x": 0, "y": 200 }
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 200,
+                "y": 0
+              },
+              {
+                "x": 200,
+                "y": 200
+              },
+              {
+                "x": 0,
+                "y": 200
+              }
             ]
           }
         }
@@ -150,10 +190,22 @@
           "name": "Левая торцевая крышка",
           "shape": {
             "segments": [
-              { "x": 0, "y": 0 },
-              { "x": 150, "y": 0 },
-              { "x": 150, "y": 100 },
-              { "x": 0, "y": 100 }
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 150,
+                "y": 0
+              },
+              {
+                "x": 150,
+                "y": 100
+              },
+              {
+                "x": 0,
+                "y": 100
+              }
             ]
           }
         },
@@ -164,10 +216,22 @@
           "name": "Правая торцевая крышка",
           "shape": {
             "segments": [
-              { "x": 0, "y": 0 },
-              { "x": 150, "y": 0 },
-              { "x": 150, "y": 100 },
-              { "x": 0, "y": 100 }
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 150,
+                "y": 0
+              },
+              {
+                "x": 150,
+                "y": 100
+              },
+              {
+                "x": 0,
+                "y": 100
+              }
             ]
           }
         }
@@ -252,7 +316,7 @@
       "blueprint": {
         "id": "bp-007"
       },
-      "active": true,
+      "active": false,
       "parts": [
         {
           "partId": "part-001",
@@ -311,6 +375,163 @@
         {
           "partId": "part-008",
           "quantity": 6
+        }
+      ]
+    },
+    {
+      "id": "asmb-004",
+      "name": "Вентилятор вытяжной",
+      "description": "Вытяжной вентилятор для удаления отработанного воздуха",
+      "blueprint": {
+        "id": "bp-010"
+      },
+      "active": true,
+      "parts": [
+        {
+          "partId": "part-001",
+          "quantity": 1
+        },
+        {
+          "partId": "part-002",
+          "quantity": 1
+        },
+        {
+          "partId": "part-003",
+          "quantity": 1
+        },
+        {
+          "partId": "part-008",
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": "asmb-005",
+      "name": "Фильтр грубой очистки",
+      "description": "Предварительный фильтр для защиты основного фильтрующего элемента",
+      "blueprint": {
+        "id": "bp-011"
+      },
+      "active": true,
+      "parts": [
+        {
+          "partId": "part-004",
+          "quantity": 1
+        },
+        {
+          "partId": "part-005",
+          "quantity": 2
+        },
+        {
+          "partId": "part-007",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "asmb-006",
+      "name": "Электрический блок управления",
+      "description": "Панель управления с клеммными соединениями",
+      "blueprint": {
+        "id": "bp-012"
+      },
+      "active": true,
+      "parts": [
+        {
+          "partId": "part-006",
+          "quantity": 1
+        },
+        {
+          "partId": "part-007",
+          "quantity": 4
+        },
+        {
+          "partId": "part-008",
+          "quantity": 12
+        }
+      ]
+    },
+    {
+      "id": "asmb-007",
+      "name": "Дренажный поддон",
+      "description": "Поддон для сбора конденсата с системой отвода",
+      "blueprint": {
+        "id": "bp-013"
+      },
+      "active": false,
+      "parts": [
+        {
+          "partId": "part-007",
+          "quantity": 2
+        },
+        {
+          "partId": "part-008",
+          "quantity": 8
+        }
+      ]
+    },
+    {
+      "id": "asmb-008",
+      "name": "Комплект крепежа и уплотнителей",
+      "description": "Стандартный монтажный комплект для сборки узлов",
+      "blueprint": null,
+      "active": true,
+      "parts": [
+        {
+          "partId": "part-007",
+          "quantity": 10
+        },
+        {
+          "partId": "part-008",
+          "quantity": 50
+        }
+      ]
+    },
+    {
+      "id": "asmb-009",
+      "name": "Резервный вентилятор",
+      "description": "Дублирующий вентилятор для систем с повышенной надёжностью",
+      "blueprint": {
+        "id": "bp-014"
+      },
+      "active": true,
+      "parts": [
+        {
+          "partId": "part-001",
+          "quantity": 1
+        },
+        {
+          "partId": "part-002",
+          "quantity": 1
+        },
+        {
+          "partId": "part-003",
+          "quantity": 1
+        },
+        {
+          "partId": "part-008",
+          "quantity": 6
+        }
+      ]
+    },
+    {
+      "id": "asmb-010",
+      "name": "Сервисный комплект",
+      "description": "Комплект расходных материалов для технического обслуживания",
+      "blueprint": null,
+      "active": true,
+      "parts": [
+        {
+          "partId": "part-005",
+          "quantity": 3
+        },
+        {
+          "partId": "part-007",
+          "quantity": 5
+        },
+        {
+          "partId": "part-008",
+          "quantity": 20
         }
       ]
     }
