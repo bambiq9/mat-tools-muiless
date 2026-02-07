@@ -92,8 +92,14 @@
 		gap: 16px;
 	}
 
-	button {
-		flex: 1;
-		justify-content: center;
+	.controls {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+
+		button,
+		.link {
+			flex-grow: 1;
+		}
 	}
 }
