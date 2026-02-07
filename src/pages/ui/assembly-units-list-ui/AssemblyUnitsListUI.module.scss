@@ -93,14 +93,13 @@
 	}
 
 	.controls {
-		flex-direction: column;
+		display: flex;
+		justify-content: space-between;
 		width: 100%;
 
 		button,
 		.link {
-			flex: 1;
-			justify-content: center;
-			width: 100%;
+			flex-grow: 1;
 		}
 	}
 }
