@@ -9,6 +9,7 @@ import { SearchIcon } from '@assets/svg/SearchIcon/SearchIcon';
 import { PlusIcon } from '@assets/svg/PlusIcon/PlusIcon';
 import { ArchiveIcon } from '@assets/svg/ArchiveIcon/ArchiveIcon';
 import { TrashIcon } from '@assets/svg/TrashIcon/TrashIcon';
+import { Link } from 'react-router-dom';
 
 export const AssemblyUnitsListUI: FC<TAssemblyUnitsListUIProps> = ({
 	activeUnits,
@@ -20,45 +21,28 @@ export const AssemblyUnitsListUI: FC<TAssemblyUnitsListUIProps> = ({
 	hasSelected,
 	filterValue,
 	onFilterChange,
+	locationState,
 }) => {
-	let archiveButtonLabel = 'В архив';
-	if (selectedUnits.size > 0) {
-		const hasActive = Array.from(selectedUnits).some((id) =>
-			activeUnits.some((u) => u.id === id)
-		);
-		const hasArchived = Array.from(selectedUnits).some((id) =>
-			archiveUnits.some((u) => u.id === id)
-		);
-
-		if (hasArchived && !hasActive) {
-			archiveButtonLabel = 'Восстановить';
-		} else if (hasActive && hasArchived) {
-			archiveButtonLabel = 'Изменить статус';
-		}
-	}
-
 	return (
 		<main>
 			<Container fixedWidth className={styles.container}>
 				<div className={styles.header}>
 					<Typography type='h1'>Сборочные единицы</Typography>
 					<div className={styles.controls}>
-						<Button IconLeft={PlusIcon}>Добавить</Button>
-						<Button
-							IconLeft={ArchiveIcon}
-							onClick={onArchive}
-							disabled={!hasSelected}
-							color='neutral'
+						<Link
+							className={styles.link}
+							to={'/assembly-units-list/add'}
+							state={locationState}
 						>
-							{archiveButtonLabel}
+							<Button>
+								<PlusIcon />
+							</Button>
+						</Link>
+						<Button onClick={onArchive} disabled={!hasSelected} color='neutral'>
+							<ArchiveIcon />
 						</Button>
-						<Button
-							IconLeft={TrashIcon}
-							onClick={onDelete}
-							disabled={!hasSelected}
-							color='error'
-						>
-							Удалить
+						<Button onClick={onDelete} disabled={!hasSelected} color='error'>
+							<TrashIcon />
 						</Button>
 					</div>
 					<div className={styles['search-container']}>
@@ -80,6 +64,7 @@ export const AssemblyUnitsListUI: FC<TAssemblyUnitsListUIProps> = ({
 					<ul className={styles.list}>
 						{activeUnits.map((unit) => (
 							<AssemblyUnit
+								locationState={locationState}
 								key={unit.id}
 								unit={unit}
 								isSelected={selectedUnits.has(unit.id)}
@@ -98,6 +83,7 @@ export const AssemblyUnitsListUI: FC<TAssemblyUnitsListUIProps> = ({
 					<ul className={styles.list}>
 						{archiveUnits.map((unit) => (
 							<AssemblyUnit
+								locationState={locationState}
 								key={unit.id}
 								unit={unit}
 								isSelected={selectedUnits.has(unit.id)}

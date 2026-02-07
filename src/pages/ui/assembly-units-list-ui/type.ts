@@ -1,4 +1,5 @@
 import type { TAssemblyUnitCard } from '@utils/types';
+import type { Location } from 'react-router-dom';
 
 export type TAssemblyUnitsListUIProps = {
 	activeUnits: TAssemblyUnitCard[];
@@ -10,4 +11,5 @@ export type TAssemblyUnitsListUIProps = {
 	hasSelected: boolean;
 	filterValue: string;
 	onFilterChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	locationState: { background: Location };
 };

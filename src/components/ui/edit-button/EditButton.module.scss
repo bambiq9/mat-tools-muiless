@@ -1,0 +1,33 @@
+.edit-button {
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+	background: white;
+	border: 1px solid #e2e8f0;
+	border-radius: 4px;
+	box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
+	cursor: pointer;
+	transform: translateY(-4px);
+	opacity: 0;
+	transition: all 0.2s ease;
+}
+
+.edit-button:hover {
+	background: #f7fafc;
+	border-color: #cbd5e0;
+}
+
+.edit-button svg {
+	width: 24px;
+	height: 24px;
+	color: #718096;
+}
+
+.edit-button:hover svg {
+	color: #4299e1;
+}

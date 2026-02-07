@@ -71,6 +71,11 @@
 			0 0 0 2px v.$info,
 			0 4px 6px -1px rgb(0 0 0 / 10%);
 	}
+
+	&:hover .editButtonWrapper {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
 .card:hover .selection-checkbox {

@@ -2,6 +2,10 @@
 @import './styles/normalize.css';
 @import './assets/fonts/fonts.css';
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	display: flex;
 	justify-content: center;

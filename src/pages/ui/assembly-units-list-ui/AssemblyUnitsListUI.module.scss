@@ -49,6 +49,13 @@
 	height: fit-content;
 }
 
+.link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+}
+
 .list-title {
 	margin-bottom: 20px;
 	padding-bottom: 8px;
