@@ -53,6 +53,10 @@ export type TAssemblyUnitPart = {
 	blueprint?: TBlueprint;
 };
 
+export type ISelectedPart = TAssemblyUnitPart & {
+	quantity: number;
+};
+
 export type TAssemblyUnitPartsList = {
 	partId: string;
 	quantity: number;

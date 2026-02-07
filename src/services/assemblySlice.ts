@@ -9,13 +9,41 @@ import {
 	getAssemblyUnitsListApi,
 	updateAssemblyUnitApi,
 	deleteAssemblyUnitApi,
+	addAssemblyUnitApi,
+	getAssemblyUnitApi,
 } from '@utils/api';
 import type { TAssemblyUnit, TAssemblyUnitPart } from '@utils/types';
 import type { RootState } from './store';
 
+export const addAssemblyUnit = createAsyncThunk(
+	'addAssemblyUnit',
+	async (data: Omit<TAssemblyUnit, 'id'>, { dispatch }) => {
+		const newUnit = await addAssemblyUnitApi(data);
+		dispatch(getAssemblyUnitsList());
+		return newUnit;
+	}
+);
+
 export const getAssemblyUnitsList = createAsyncThunk(
 	'getAssmblyUnitsList',
 	async () => await getAssemblyUnitsListApi()
+);
+
+export const getAssemblyUnit = createAsyncThunk(
+	'getAssmblyUnit',
+	async (unitId: string) => await getAssemblyUnitApi(unitId)
+);
+
+export const updateAssemblyUnit = createAsyncThunk(
+	'updateAssemblyUnit',
+	async (
+		{ id, data }: { id: string; data: Partial<TAssemblyUnit> },
+		{ dispatch }
+	) => {
+		const updatedUnit = await updateAssemblyUnitApi(id, data);
+		dispatch(getAssemblyUnitsList());
+		return updatedUnit;
+	}
 );
 
 export const getAssemblyUnitPartsList = createAsyncThunk(
@@ -29,7 +57,7 @@ export const getAssemblyUnitPart = createAsyncThunk(
 );
 
 export const toggleArchiveAssemblyUnits = createAsyncThunk(
-	'assembly/toggleArchiveUnits',
+	'toggleArchiveAssemblyUnits',
 	async (unitIds: string[], { dispatch, getState }) => {
 		const state = getState() as RootState;
 		const units = selectUnitsList(state);
@@ -47,7 +75,7 @@ export const toggleArchiveAssemblyUnits = createAsyncThunk(
 );
 
 export const deleteAssemblyUnits = createAsyncThunk(
-	'assembly/deleteUnits',
+	'deleteAssemblyUnits',
 	async (unitIds: string[], { dispatch }) => {
 		await Promise.all(unitIds.map((id) => deleteAssemblyUnitApi(id)));
 		dispatch(getAssemblyUnitsList());
@@ -93,9 +121,12 @@ const assemblySlice = createSlice({
 	extraReducers: (builder) => {
 		[
 			getAssemblyUnitsList,
+			getAssemblyUnit,
+			updateAssemblyUnit,
 			getAssemblyUnitPartsList,
 			getAssemblyUnitPart,
 			toggleArchiveAssemblyUnits,
+			addAssemblyUnit,
 			deleteAssemblyUnits,
 		].forEach((thunk) => {
 			builder.addCase(thunk.pending, (state) => {
@@ -112,6 +143,13 @@ const assemblySlice = createSlice({
 				state.assemblyUnitsList = action.payload;
 				state.isLoading = false;
 			})
+			.addCase(getAssemblyUnit.fulfilled, (state, action) => {
+				state.assemblyUnit = action.payload;
+				state.isLoading = false;
+			})
+			.addCase(updateAssemblyUnit.fulfilled, (state) => {
+				state.isLoading = false;
+			})
 			.addCase(getAssemblyUnitPartsList.fulfilled, (state, action) => {
 				state.isLoading = false;
 				state.assemblyUnitPartsList = action.payload;
@@ -124,6 +162,9 @@ const assemblySlice = createSlice({
 				state.isLoading = false;
 			})
 			.addCase(deleteAssemblyUnits.fulfilled, (state) => {
+				state.isLoading = false;
+			})
+			.addCase(addAssemblyUnit.fulfilled, (state) => {
 				state.isLoading = false;
 			});
 	},

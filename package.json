@@ -18,7 +18,7 @@
 		"format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path ./.prettierignore",
 		"check": "npm run stylelint:fix && npm run lint && npm run format",
 		"prepare": "husky",
-		"server": "json-server --host 192.168.0.100 --watch src/utils/db.json --port 3001"
+		"server": "json-server --host 192.168.0.105 --watch src/utils/db.json --port 3001"
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "^2.9.0",

@@ -17,8 +17,10 @@ import {
 	deleteAssemblyUnits,
 } from '@services/assemblySlice';
 import type { TAssemblyUnitCard, TAssemblyUnitCardPart } from '@utils/types';
+import { useLocation } from 'react-router-dom';
 
 export const AssemblyUnitsList: FC = () => {
+	const location = useLocation();
 	const dispatch = useDispatch();
 	const unitsList = useSelector(selectUnitsList);
 	const partsList = useSelector(selectUnitPartsList);
@@ -119,6 +121,7 @@ export const AssemblyUnitsList: FC = () => {
 			hasSelected={selectedIds.size > 0}
 			filterValue={filter}
 			onFilterChange={handleFilterChange}
+			locationState={{ background: location }}
 		/>
 	);
 };

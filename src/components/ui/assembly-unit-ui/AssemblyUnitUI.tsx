@@ -5,11 +5,14 @@ import styles from './AssemblyUnitUI.module.scss';
 import { Typography } from '../typography';
 import { AssemblyUnitPartsList } from '@components/assembly-unit-parts-list';
 import type { TAssemblyUnitProps } from './types';
+import { EditButton } from '../edit-button';
+import { Link } from 'react-router-dom';
 
 export const AssemblyUnitUI: FC<TAssemblyUnitProps> = ({
 	unit,
 	isSelected,
 	onCheckboxChange,
+	locationState,
 }) => {
 	return (
 		<Card
@@ -37,6 +40,9 @@ export const AssemblyUnitUI: FC<TAssemblyUnitProps> = ({
 					className={styles.checkbox}
 				/>
 			</div>
+			<Link state={locationState} to={`/assembly-units-list/edit/${unit.id}`}>
+				<EditButton className={styles.editButtonWrapper} />
+			</Link>
 			<div className={styles.header}>
 				<div className={styles.header__icon}>
 					<GearsIcon />

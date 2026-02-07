@@ -316,7 +316,7 @@
       "blueprint": {
         "id": "bp-007"
       },
-      "active": true,
+      "active": false,
       "parts": [
         {
           "partId": "part-001",
@@ -343,7 +343,7 @@
       "blueprint": {
         "id": "bp-008"
       },
-      "active": true,
+      "active": false,
       "parts": [
         {
           "partId": "part-004",
@@ -380,12 +380,12 @@
     },
     {
       "id": "asmb-004",
-      "name": "Вентилятор вытяжной",
+      "name": "Вентилятор вытяжной 2",
       "description": "Вытяжной вентилятор для удаления отработанного воздуха",
       "blueprint": {
         "id": "bp-010"
       },
-      "active": false,
+      "active": true,
       "parts": [
         {
           "partId": "part-001",
@@ -393,17 +393,23 @@
         },
         {
           "partId": "part-002",
-          "quantity": 1
+          "quantity": 4
         },
         {
           "partId": "part-003",
-          "quantity": 1
+          "quantity": 2
         },
         {
           "partId": "part-008",
-          "quantity": 4
+          "quantity": 3
+        },
+        {
+          "partId": "part-004",
+          "quantity": 1
         }
-      ]
+      ],
+      "unit": "",
+      "date": ""
     },
     {
       "id": "asmb-005",
@@ -435,7 +441,7 @@
       "blueprint": {
         "id": "bp-012"
       },
-      "active": true,
+      "active": false,
       "parts": [
         {
           "partId": "part-006",

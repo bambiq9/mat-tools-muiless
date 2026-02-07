@@ -48,6 +48,10 @@ export const getUserApi = async (userId: string): Promise<TUser> =>
 export const getAssemblyUnitsListApi = async (): Promise<TAssemblyUnit[]> =>
 	fetchData('assemblyUnits');
 
+export const getAssemblyUnitApi = async (
+	unitId: string
+): Promise<TAssemblyUnit> => fetchData(`assemblyUnits/${unitId}`);
+
 export const updateAssemblyUnitApi = async (
 	unitId: string,
 	data: Partial<TAssemblyUnit>
@@ -66,6 +70,11 @@ export const getAssemblyUnitPartsListApi = async (): Promise<
 export const getAssemblyUnitPartApi = async (
 	partId: string
 ): Promise<TAssemblyUnitPart> => fetchData(`assemblyUnitParts/${partId}`);
+
+export const addAssemblyUnitApi = async (
+	data: Omit<TAssemblyUnit, 'id'>
+): Promise<Omit<TAssemblyUnit, 'id'>> =>
+	fetchData('assemblyUnits', 'POST', data);
 
 export const addAssemblyUnitPartApi = async (
 	data: TAssemblyUnitPart
