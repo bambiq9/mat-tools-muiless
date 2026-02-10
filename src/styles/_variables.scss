@@ -1,3 +1,4 @@
+$white: #ffffff;
 $background-light: #f1f5f9;
 $text: #1e293b;
 $text-secondary: #64748b;
@@ -9,3 +10,18 @@ $info: #0ea5e9;
 $separator: #e2e8f0;
 $padding-sm: 16px;
 $padding-md: 24px;
+$sidebar-width: 260px;
+$sidebar-width-collapsed: 64px;
+$top-header-height: 60px;
+$radius-sm: 6px;
+$radius-full: 50%;
+$bp-tablet: 760px;
+$bp-mobile: 450px;
+$transition-base: 0.2s ease;
+$transition-slow: 0.3s ease;
+$shadow-lg:
+	0 10px 15px -3px rgb(0 0 0 / 10%),
+	0 4px 6px -2px rgb(0 0 0 / 5%);
+$shadow-sm:
+	0 4px 6px -1px rgb(0 0 0 / 10%),
+	0 2px 4px -1px rgb(0 0 0 / 6%);
