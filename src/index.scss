@@ -15,8 +15,21 @@ body {
 	font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
 	background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
 	background-color: v.$background-light;
+	transition: margin 0.2s ease;
 }
 
 #root {
 	width: 100%;
+}
+
+@media (width >= 760px) {
+	body {
+		margin-left: v.$sidebar-width-collapsed;
+	}
+}
+
+@media (width <= 760px) {
+	body {
+		margin-top: v.$top-header-height;
+	}
 }

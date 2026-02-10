@@ -38,8 +38,8 @@ export const Typography: FC<TTypographyProps> = ({
 		<TypographyComponent
 			className={
 				align
-					? `${styles[style]} ${styles[align]} ${className}`
-					: `${styles.typograph} ${className}`
+					? `${className} ${styles[style]} ${styles[align]}`
+					: `${className} ${styles.typograph}`
 			}
 		>
 			{children}
