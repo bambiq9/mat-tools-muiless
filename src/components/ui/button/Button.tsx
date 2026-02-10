@@ -9,6 +9,7 @@ export const Button: FC<TButtonProps> = ({
 	loading = false,
 	color = 'primary',
 	children,
+	className,
 	...props
 }) => {
 	const colorClass = `button_${color}`;
@@ -39,7 +40,10 @@ export const Button: FC<TButtonProps> = ({
 	};
 
 	return (
-		<button className={`${styles.button} ${styles[colorClass]}`} {...props}>
+		<button
+			className={`${styles.button} ${styles[colorClass]} ${className || ''}`}
+			{...props}
+		>
 			{content()}
 		</button>
 	);

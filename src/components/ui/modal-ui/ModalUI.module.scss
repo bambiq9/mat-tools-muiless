@@ -1,3 +1,5 @@
+@use '../../../styles/variables' as v;
+
 .overlay {
 	position: fixed;
 	inset: 0;
@@ -16,29 +18,43 @@
 	max-width: 600px;
 	max-height: 90vh;
 	overflow: hidden;
-	background: #ffffff;
+	background: v.$white;
 	border-radius: 8px;
 	box-shadow: 0 10px 25px rgb(0 0 0 / 20%);
 	transform: translate(-50%, -50%);
 }
 
 .header {
+	display: flex;
 	flex-shrink: 0;
-	padding: 24px 24px 16px;
-	border-bottom: 1px solid #e2e8f0;
+	justify-content: space-between;
+	align-items: center;
+	padding: v.$padding-md v.$padding-md v.$padding-sm;
+	border-bottom: 1px solid v.$separator;
 }
 
 .title {
 	margin: 0;
-	color: #1a202c;
+	color: v.$text;
 	font-weight: 600;
 	font-size: 20px;
+}
+
+.close-btn {
+	padding: 0;
+	color: inherit;
+	background-color: transparent;
+}
+
+.close-icon {
+	width: 30px;
+	height: 30px;
 }
 
 .body {
 	flex: 1;
 	min-height: 0;
-	padding: 24px;
+	padding: v.$padding-md;
 	overflow-y: auto;
 }
 
