@@ -1,0 +1,21 @@
+@use '../../../styles/variables' as v;
+
+.container {
+	flex-direction: column;
+	gap: 40px;
+}
+
+.controls {
+	padding: v.$padding-md;
+}
+
+.control-row {
+	display: flex;
+	flex-direction: column;
+	gap: v.$padding-md;
+}
+
+.control-group {
+	display: flex;
+	flex-direction: column;
+}

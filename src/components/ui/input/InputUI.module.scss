@@ -1,0 +1,43 @@
+@use '../../../styles/variables' as v;
+
+.wrapper {
+	position: relative;
+}
+
+.input {
+	width: 100%;
+	padding: 10px 16px;
+	background: v.$white;
+	border: 1px solid v.$text-secondary;
+	border-radius: 6px;
+	transition: border-color v.$transition-base;
+
+	&:focus {
+		border-color: v.$info;
+		outline: none;
+		box-shadow: 0 0 0 2px rgb(49 130 206 / 20%);
+	}
+}
+
+.wrapper:has(.icon_left) .input {
+	padding-left: 40px;
+}
+
+.wrapper:has(.icon_right) .input {
+	padding-right: 40px;
+}
+
+.icon {
+	position: absolute;
+	top: 50%;
+	color: v.$text-secondary;
+	transform: translateY(-50%);
+}
+
+.icon_left {
+	left: 10px;
+}
+
+.icon_right {
+	right: 10px;
+}
