@@ -59,7 +59,6 @@ export const AddAssemblyUnitUI: FC<TAddAssemblyUnitUIProps> = ({
 					onChange={(e) => onUnitChange(e.target.value)}
 				>
 					<option value=''>Выберите установку</option>
-					{/* Добавьте опции при необходимости */}
 				</select>
 			</div>
 
