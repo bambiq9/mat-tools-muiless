@@ -6,8 +6,15 @@ import {
 } from 'react-redux';
 import userSlice from './userSlice';
 import assemblySlice from './assemblySlice';
+import insulationSlice from './insulationSlice';
+import unitsSlice from './unitsSlice';
 
-const rootReducer = combineSlices(userSlice, assemblySlice);
+const rootReducer = combineSlices(
+	userSlice,
+	assemblySlice,
+	insulationSlice,
+	unitsSlice
+);
 
 const store = configureStore({
 	reducer: rootReducer,

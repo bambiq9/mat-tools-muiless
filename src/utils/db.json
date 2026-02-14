@@ -543,78 +543,221 @@
     }
   ],
   "units": [
-    {
-      "id": "fridge-001",
-      "name": "Холодильная установка К-1",
-      "insulation": [
-        {
-          "id": "1",
-          "name": "электро отсек",
-          "date": "2023-05-15T09:30:00.000Z",
-          "items": [
-            {
-              "id": "1-1",
-              "thickness": 13,
-              "adhesive": true,
-              "name": "Основная изоляция корпуса",
-              "shape": {
-                "width": 1200,
-                "height": 800
-              }
+  {
+    "id": "fridge-001",
+    "name": "Холодильная установка К-1",
+    "insulation": [
+      {
+        "id": "1",
+        "name": "электро отсек",
+        "date": "2023-05-15T09:30:00.000Z",
+        "items": [
+          {
+            "id": "1-1",
+            "thickness": 13,
+            "adhesive": true,
+            "name": "Основная изоляция корпуса",
+            "shape": {
+              "width": 1200,
+              "height": 800
             }
-          ]
-        },
-        {
-          "id": "3",
-          "name": "днище",
-          "date": "2024-01-10T11:15:00.000Z",
-          "items": [
-            {
-              "id": "3-1",
-              "thickness": 13,
-              "adhesive": true,
-              "name": "Центральная часть",
-              "shape": {
-                "width": 1500,
-                "height": 1000
-              }
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "name": "днище",
+        "date": "2024-01-10T11:15:00.000Z",
+        "items": [
+          {
+            "id": "3-1",
+            "thickness": 13,
+            "adhesive": true,
+            "name": "Центральная часть",
+            "shape": {
+              "width": 1500,
+              "height": 1000
             }
-          ]
-        }
-      ],
-      "filter": null,
-      "date": "2024-05-20T10:00:00.000Z"
-    },
-    {
-      "id": "ac-001",
-      "name": "Кондиционер Модель АС-200",
-      "insulation": null,
-      "filter": null,
-      "date": "2023-11-15T14:30:00.000Z"
-    },
-    {
-      "id": "fridge-002",
-      "name": "Холодильная установка К-2",
-      "insulation": [
-        {
-          "id": "2",
-          "name": "перегородка",
-          "date": "2022-11-20T14:22:00.000Z",
-          "items": [
-            {
-              "id": "2-1",
-              "thickness": 6,
-              "adhesive": true,
-              "shape": {
-                "width": 600,
-                "height": 400
-              }
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "name": "крышка испарителя",
+        "date": "2024-06-18T14:20:00.000Z",
+        "items": [
+          {
+            "id": "4-1",
+            "thickness": 15,
+            "adhesive": true,
+            "name": "Верхняя изоляция",
+            "shape": {
+              "width": 1100,
+              "height": 750
             }
-          ]
-        }
-      ],
-      "filter": null,
-      "date": "2024-02-10T09:15:00.000Z"
-    }
-  ]
+          },
+          {
+            "id": "4-2",
+            "thickness": 10,
+            "adhesive": false,
+            "name": "Боковые вставки",
+            "shape": {
+              "width": 300,
+              "height": 750
+            }
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "name": "боковые панели",
+        "date": "2024-07-05T10:45:00.000Z",
+        "items": [
+          {
+            "id": "5-1",
+            "thickness": 12,
+            "adhesive": true,
+            "name": "Левая панель",
+            "shape": {
+              "width": 900,
+              "height": 1800
+            }
+          },
+          {
+            "id": "5-2",
+            "thickness": 12,
+            "adhesive": true,
+            "name": "Правая панель",
+            "shape": {
+              "width": 900,
+              "height": 1800
+            }
+          }
+        ]
+      }
+    ],
+    "filter": null,
+    "date": "2024-05-20T10:00:00.000Z"
+  },
+  {
+    "id": "ac-001",
+    "name": "Кондиционер Модель АС-200",
+    "insulation": [
+      {
+        "id": "ac-1",
+        "name": "корпус внутреннего блока",
+        "date": "2024-03-12T09:30:00.000Z",
+        "items": [
+          {
+            "id": "ac-1-1",
+            "thickness": 8,
+            "adhesive": true,
+            "name": "Передняя панель",
+            "shape": {
+              "width": 850,
+              "height": 300
+            }
+          },
+          {
+            "id": "ac-1-2",
+            "thickness": 10,
+            "adhesive": true,
+            "name": "Задняя стенка",
+            "shape": {
+              "width": 850,
+              "height": 550
+            }
+          }
+        ]
+      },
+      {
+        "id": "ac-2",
+        "name": "теплообменник",
+        "date": "2024-04-22T16:10:00.000Z",
+        "items": [
+          {
+            "id": "ac-2-1",
+            "thickness": 6,
+            "adhesive": false,
+            "name": "Изоляция трубок",
+            "shape": {
+              "width": 600,
+              "height": 400
+            }
+          }
+        ]
+      }
+    ],
+    "filter": null,
+    "date": "2023-11-15T14:30:00.000Z"
+  },
+  {
+    "id": "fridge-002",
+    "name": "Холодильная установка К-2",
+    "insulation": [
+      {
+        "id": "2",
+        "name": "перегородка",
+        "date": "2022-11-20T14:22:00.000Z",
+        "items": [
+          {
+            "id": "2-1",
+            "thickness": 6,
+            "adhesive": true,
+            "shape": {
+              "width": 600,
+              "height": 400
+            }
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "name": "верхняя крышка",
+        "date": "2024-03-01T11:20:00.000Z",
+        "items": [
+          {
+            "id": "6-1",
+            "thickness": 14,
+            "adhesive": true,
+            "name": "Основная крышка",
+            "shape": {
+              "width": 1400,
+              "height": 900
+            }
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "name": "дверца",
+        "date": "2024-04-15T13:40:00.000Z",
+        "items": [
+          {
+            "id": "7-1",
+            "thickness": 12,
+            "adhesive": true,
+            "name": "Внешняя сторона",
+            "shape": {
+              "width": 700,
+              "height": 1600
+            }
+          },
+          {
+            "id": "7-2",
+            "thickness": 8,
+            "adhesive": false,
+            "name": "Уплотнительный контур",
+            "shape": {
+              "width": 700,
+              "height": 100
+            }
+          }
+        ]
+      }
+    ],
+    "filter": null,
+    "date": "2024-02-10T09:15:00.000Z"
+  }
+]
 }
