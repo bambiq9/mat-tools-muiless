@@ -40,7 +40,7 @@ export type TUnit = {
 	name: string;
 	insulation: TInsulationGroup[] | null;
 	filter: null;
-	date: Date;
+	date: string;
 };
 
 export type TBlueprint = {

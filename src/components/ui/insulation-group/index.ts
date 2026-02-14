@@ -1,1 +1,1 @@
-export { InsulationGroupUI } from './InsulationGroup';
+export { InsulationGroupUI } from './InsulationGroupUI';

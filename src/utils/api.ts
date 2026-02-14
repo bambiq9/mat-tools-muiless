@@ -2,6 +2,7 @@ import type {
 	TAssemblyUnit,
 	TAssemblyUnitPart,
 	TInsulationGroup,
+	TUnit,
 	TUser,
 } from './types';
 
@@ -109,3 +110,9 @@ export const deleteInsulationGroupApi = async (
 	groupId: string
 ): Promise<TInsulationGroup> =>
 	fetchData(`insulationGroups/${groupId}`, 'DELETE');
+
+// Units
+export const getUnitsApi = async (): Promise<TUnit[]> => fetchData('units');
+
+export const getUnitApi = async (unitId: string): Promise<TUnit> =>
+	fetchData(`units/${unitId}`);

@@ -9,7 +9,7 @@ export const InputUI: FC<TInputUIProps> = ({
 	IconRight = null,
 	...props
 }) => {
-	const textInputElement = () => (
+	const inputElement = (
 		<input className={`${styles.input} ${className}`} type={type} {...props} />
 	);
 
@@ -22,7 +22,7 @@ export const InputUI: FC<TInputUIProps> = ({
 							{<IconLeft />}
 						</div>
 					)}
-					{textInputElement()}
+					{inputElement}
 					{IconRight && (
 						<div className={`${styles.icon} ${styles['icon_right']}`}>
 							{<IconRight />}
@@ -32,7 +32,7 @@ export const InputUI: FC<TInputUIProps> = ({
 			);
 		}
 
-		return textInputElement();
+		return inputElement;
 	};
 
 	return content();
