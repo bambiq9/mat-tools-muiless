@@ -1,5 +1,6 @@
 import { ListDetails } from '@assets/svg/ListDetailsIcon/ListDetailsIcon';
 import { PartIcon } from '@assets/svg/PartIcon/PartIcon';
+import { StackIcon } from '@assets/svg/StackIcon/StackIcon';
 import { UnitIcon } from '@assets/svg/UnitIcon/UnitIcon';
 import { Sidebar } from '@components/sidebar';
 import { AppRoutes } from '@routes/AppRoutes';
@@ -27,6 +28,13 @@ function App() {
 			title: 'Каталог деталей',
 			icon: <PartIcon />,
 			path: '/parts-catalog',
+			isActive: false,
+		},
+		{
+			id: 'insulation-list',
+			title: 'Теплоизоляция',
+			icon: <StackIcon />,
+			path: '/insulation/list',
 			isActive: false,
 		},
 		{
